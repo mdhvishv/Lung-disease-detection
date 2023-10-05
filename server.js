@@ -10,10 +10,8 @@ const virtualEnvDir = "my_venv";
 // Define the Python version to install (e.g., Python 3.11.5)
 const pythonVersion = "3.11.5";
 
-// curl -o python-installer.exe ${pythonInstallerUrl} && python-installer.exe /quiet InstallAllUsers=1 DefaultAllUsersTargetDir="${pythonInstallDir}" PrependPath=1
 // Install Python from the amd64 exe
-// const installPythonCommand = `curl https://www.python.org/ftp/python/${pythonVersion}/python-${pythonVersion}-amd64.exe -o python-${pythonVersion}.exe && python-${pythonVersion}.exe /quiet DefaultAllUsersTargetDir="${pythonInstallDir}" PrependPath=1`;
-const installPythonCommand = `wget https://www.python.org/ftp/python/3.11.5/python-3.11.5-amd64.exe -O python-3.11.5.exe && python-3.11.5.exe /quiet DefaultAllUsersTargetDir="/python" PrependPath=1`;
+const installPythonCommand = `sudo apt-get update && sudo apt-get install build-essential && wget https://www.python.org/ftp/python/${pythonVersion}/Python-${pythonVersion}.tar.xz -O Python-${pythonVersion}.tar.xz && tar -xvf Python-${pythonVersion}.tar.xz && cd Python-${pythonVersion} && ./configure --prefix=${pythonInstallDir} && make && sudo make install && cd ..`;
 
 exec(installPythonCommand, (error, stdout, stderr) => {
   if (error) {
@@ -37,9 +35,8 @@ exec(installPythonCommand, (error, stdout, stderr) => {
     );
 
     // Activate the Python virtual environment
-    const activateScript =
-      process.platform === "win32" ? "Scripts/activate" : "bin/activate";
-    const activateCommand = path.join(virtualEnvDir, activateScript);
+    const activateScript = path.join(virtualEnvDir, "bin", "activate");
+    const activateCommand = `source ${activateScript}`;
 
     // Install Python packages within the virtual environment
     const installRequirementsCommand = `${activateCommand} && pip install -r requirements.txt`;
