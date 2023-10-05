@@ -11,7 +11,7 @@ const virtualEnvDir = "my_venv";
 const pythonVersion = "3.11.5";
 
 // Install Python from the amd64 exe
-const installPythonCommand = `sudo apt-get update && sudo apt-get install build-essential && wget https://www.python.org/ftp/python/${pythonVersion}/Python-${pythonVersion}.tar.xz -O Python-${pythonVersion}.tar.xz && tar -xvf Python-${pythonVersion}.tar.xz && cd Python-${pythonVersion} && ./configure --prefix=${pythonInstallDir} && make && sudo make install && cd ..`;
+const installPythonCommand = `apt install sudo && sudo apt-get update && sudo apt-get install build-essential && wget https://www.python.org/ftp/python/${pythonVersion}/Python-${pythonVersion}.tar.xz -O Python-${pythonVersion}.tar.xz && tar -xvf Python-${pythonVersion}.tar.xz && cd Python-${pythonVersion} && ./configure --prefix=${pythonInstallDir} && make && sudo make install && cd ..`;
 
 exec(installPythonCommand, (error, stdout, stderr) => {
   if (error) {
