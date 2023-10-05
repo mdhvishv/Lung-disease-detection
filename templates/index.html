@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Detection</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/diseaseka.css')}}">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<header>
+    <nav>
+        
+        <div class="menu">
+            <a href="#">About Pneumonia</a>
+            <a href="#">Famous Research</a>
+            <a href="#">Treatments</a>
+            <a href="#">Pneumonia Prediction</a>
+            <a href="#">More Information</a>
+            <a href="#" style="background:rgb(124, 222, 124) ;border-radius: 5px;" id="login">Login</a>
+        </div> 
+    </nav>
+    <!-- animate_animated animate__fadeIn -->
+        <div class="container">
+            <div class="left ">
+                <h1>Pneumonia Detection </h1>
+                <p class="Home">
+                    for the early detection of pneumonia<br> in chest X-ray images
+                </p>
+            </div>
+            <div class="right">
+                <img src="https://www.thehealthy.com/wp-content/uploads/2018/05/GettyImages-855713702-e1587486740506.jpg" alt="lungs">
+
+            </div>
+        </div>
+        <div class="container2">            
+            <div class="left2">
+                <h1>Overview</h1>
+                <p class="Home">Pneumonia is a complex condition with various aspects to explore.
+                    To learn more about pneumonia, its causes, symptoms, diagnosis, and prevention, you can refer to reputable sources such as medical journals, healthcare organizations, and government health websites.
+                    Stay informed and take proactive measures to protect yourself and your loved ones from pneumonia.
+                    It is crucial to diagnose pneumonia promptly to initiate timely medical intervention. Our platform leverages the power of artificial intelligence to assist in the detection of pneumonia from chest X-ray images.</p>
+            </div>
+            <div class="right2">
+                
+                <img src="{{url_for('static',filename='defect.png')}}" alt="pneumonia" id="defect">
+            </div>
+
+        </div>
+        <section style=" margin-left: 100px;">
+            <!-- <hr color="white"> -->
+            <h2 style="color: white; font-size: 50px;">Difference in lungs </h2>
+                <h3 style="color: aliceblue; font-size: 25px"><b>Normal lungs have a clear and transparent appearance on imaging and do not exhibit signs of infection or inflammation. In contrast, lungs affected by pneumonia often show opacities or areas of increased density on imaging due to infection, inflammation, and fluid accumulation. Symptoms associated with pneumonia, such as respiratory distress and fever, are absent in individuals with normal lungs. Recognizing these differences is crucial for accurate diagnosis and treatment of pneumonia.The differences between normal and pneumonia-affected lungs is essential. <br>Here's an overview of normal lungs and how they differ from lungs affected by pneumonia.</b></h3>
+            </section>
+        <!-- <hr color="white"> -->
+        <div class="container3">
+        <div class="left3">
+            <h2>Normal</h2>
+            <img src="{{url_for('static',filename='normal.jpg')}}" alt="Normal Lung" class="Lung">        
+        
+          
+        </div>
+        <div class="right3">
+            <h2>Pneumonia</h2>
+            <img src="{{url_for('static',filename='pneu.jpg')}}" alt="Defected Lung" class="Lung">        </div>
+      </div>
+      <div class="container4">
+        <div class="left4">
+           <h1>Prediction</h1>
+           <ul>
+            <li>Users can upload chest X-ray images for analysis.</li>
+            <li>Upon image upload, the website processes the X-ray image to prepare it for analysis.</li>
+            <li>Preprocessing steps may include resizing and normalization</li>   
+            <li>The website employs an AI model, typically a Convolutional Neural Network (CNN), to analyze the X-ray image.</li>
+            <li>The AI model detects patterns and features in the image that may indicate the presence or absence of pneumonia.</li>
+            <li>After analysis, the AI model provides a prediction based on the X-ray image.</li>
+            <li>The prediction typically includes whether pneumonia is detected or not.</li>
+        </ul>
+        </div>
+        <div class="right4">
+            <div id="upload-container">
+                <label for="upload-input" id="upload-label">Choose an image:</label>
+                <input type="file" id="upload-input">
+                <button id="upload-button">Upload</button>
+            </div>
+            <div id="image-container">
+                <img id="uploaded-image" src="" alt="Uploaded Image" style="display: none;">
+            </div>
+            <div id="result-container">
+                <p id="result-text"></p>
+            </div>
+            <button id="predict-button" style="display: none;">Predict</button>
+    
+        </div>
+      </div>
+</header>
+<footer>
+     <div class="footer-container">
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+
+        </div>
+        <div class="footer-nav">
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Our Team</a></li>
+              </ul>
+        </div>
+        
+     </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.15.0/dist/tf.min.js"></script>
+<script src="{{url_for('static',filename='script/disease.js')}}"></script></body>
+</body>
+</html>
