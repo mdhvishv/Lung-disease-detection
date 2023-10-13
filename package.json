@@ -4,7 +4,7 @@
   "description": "Lung-disease-detection",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "npm i && node server.js",
     "dev": "nodemon server.js"
   },
   "author": "",
