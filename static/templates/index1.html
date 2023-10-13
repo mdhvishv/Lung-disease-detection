@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pneumonia Website</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/diseaseka.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Pneumonia Detection</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Introduction<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Famous Research</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Treatments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Prediction</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact us</a>
+            </li>
+              
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      </div>
+
+    <section id="about">
+        <h2 class="c">About </h2>
+        <p>
+            Pneumonia is an infection that inflames the air sacs in one or both lungs.
+            It can be caused by bacteria, viruses, or fungi, and it leads to symptoms such as cough, fever, and difficulty breathing.
+            Pneumonia can range from mild to severe and can affect people of all ages, but it is most dangerous for young children, older adults, and individuals with weakened immune systems.
+            Understanding the causes, symptoms, and risk factors of pneumonia is crucial for proper diagnosis and treatment.
+        </p>
+    </section>
+
+    <section id="research">
+        <h2>Famous Research</h2>
+        <p>
+            Over the years, numerous research studies have contributed to advancing our knowledge of pneumonia and improving treatment outcomes.
+            Some notable research findings include the discovery of new strains of bacteria responsible for pneumonia, the development of effective vaccines, and the identification of risk factors associated with pneumonia complications.
+            These research efforts continue to shape our understanding of the disease and inform medical interventions and preventive measures.
+        </p>
+    </section>
+
+    <section id="treatments">
+        <h2>Treatments</h2>
+        <p>
+            The treatment of pneumonia depends on the underlying cause and the severity of the infection.
+            In bacterial pneumonia cases, antibiotics are typically prescribed to eliminate the bacteria causing the infection.
+            Viral pneumonia, on the other hand, often requires supportive care to manage symptoms and allow the body's immune system to fight off the virus.
+            Treatment plans may also include rest, hydration, over-the-counter pain relievers, and in severe cases, hospitalization.
+            It's important to consult a healthcare professional for an accurate diagnosis and appropriate treatment options.
+        </p>
+    </section>
+
+    <section id="prediction">
+        <h2>Pneumonia Prediction</h2>
+        <div id="upload-container">
+            <label for="upload-input" id="upload-label">Choose an image:</label>
+            <input type="file" id="upload-input">
+            <button id="upload-button">Upload</button>
+        </div>
+        <div id="image-container">
+            <img id="uploaded-image" src="" alt="Uploaded Image" style="display: none;">
+        </div>
+        <div id="result-container">
+            <p id="result-text"></p>
+        </div>
+        <button id="predict-button" style="display: none;">Predict</button>
+
+    </section>
+
+    <section id="more">
+        <h2>More Information</h2>
+        <p>
+            Pneumonia is a complex condition with various aspects to explore.
+            To learn more about pneumonia, its causes, symptoms, diagnosis, and prevention, you can refer to reputable sources such as medical journals, healthcare organizations, and government health websites.
+            Stay informed and take proactive measures to protect yourself and your loved ones from pneumonia.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Pneumonia Website. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.15.0/dist/tf.min.js"></script>
+    <script src="{{url_for('static',filename='script/disease.js')}}"></script>
+</body>
+</html>

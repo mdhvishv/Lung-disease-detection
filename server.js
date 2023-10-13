@@ -50,15 +50,13 @@
 // });
 
 const express = require("express");
+const path = require("path");
 
 const PORT = 5000;
 
 const app = express();
 
-app.use(express.static("templates"));
-
-app.get("/", (req, res) => {
-  res.render("index.html");
-});
+// app.use(express.static(path.join(__dirname, "templates")));
+app.use(express.static(path.join(__dirname, "static")));
 
 app.listen(PORT, () => console.log("Server running on PORT: ", PORT));
