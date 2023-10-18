@@ -58,5 +58,6 @@ const app = express();
 
 // app.use(express.static(path.join(__dirname, "templates")));
 app.use(express.static(path.join(__dirname, "static")));
+console.log(__dirname);
 
 app.listen(PORT, () => console.log("Server running on PORT: ", PORT));
