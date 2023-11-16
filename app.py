@@ -61,4 +61,4 @@ if __name__ == '__main__':
     load_trained_model()
 
     # Start the Flask server
-    app.run()
+    app.run(port=9000, debug=True)
